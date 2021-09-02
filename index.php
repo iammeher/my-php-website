@@ -3,10 +3,10 @@
 
 <?php
 
-print "welcome to vimal web server for testing";
+print "welcome to PHP web server for testing\n";
 
 
-print `ifconfig`;
+print `ls`;
 
 ?>
 
