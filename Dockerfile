@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
 
 RUN apt-get update
-RUN apt-get install nginx php-fpm php-mysql -y
+RUN apt-get install nginx php-fpm php-mysql net-tools -y
 
 COPY ./configs/default /etc/nginx/sites-available/default
 COPY . /var/www/html

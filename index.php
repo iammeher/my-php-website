@@ -7,6 +7,8 @@ print "welcome to PHP web server for testing\n";
 
 
 print `ls`;
+print "\n";
+print `ifconfig`;
 
 ?>
 
