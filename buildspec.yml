@@ -17,7 +17,3 @@ phases:
       - echo Build completed on `date`
       - echo Pushing the Docker images...
       - docker push $REPOSITORY_URI:latest
-      - echo Writing image definitions file...
-      - printf '[{"name":"my-php-website","imageUri":"%s"}]' $REPOSITORY_URI:latest > imagedefinitions.json
-artifacts:
-    files: imagedefinitions.json
