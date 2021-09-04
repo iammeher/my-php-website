@@ -1,0 +1,16 @@
+FROM ubuntu:20.04
+
+RUN apt-get update
+RUN apt-get install nginx php-fpm php-mysql net-tools -y
+RUN apt-get install redis-server python3-pip -y
+RUN apt-get install php php-pear -y
+RUN pip3 install --upgrade awscli 
+RUN pip3 install boto3
+RUN pecl install oauth-2.0.7
+
+COPY ./configs/default /etc/nginx/sites-available/default
+COPY . /var/www/html
+
+CMD service start redis-server && service php7.4-fpm start && nginx -g "daemon off;"
+
+EXPOSE 80
